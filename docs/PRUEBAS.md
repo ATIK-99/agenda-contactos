@@ -1,0 +1,28 @@
+# Pruebas de aceptación
+
+Ejecutar en XAMPP con dos usuarios ficticios A y B. Registrar el resultado real antes de entregar. Esta lista no implica que se hayan ejecutado en el equipo del estudiante.
+
+| Caso | Acción | Resultado esperado |
+| --- | --- | --- |
+| 1 | Abrir panel, crear, editar y eliminar sin sesión | Redirección a login; no expone contactos |
+| 2 | Registrar A con datos válidos | Se crea una cuenta y el password almacenado es un hash |
+| 3 | Repetir correo de A | Se rechaza sin duplicar registros |
+| 4 | Probar correo inválido, campos vacíos o contraseñas distintas | Rechazo y mensaje claro |
+| 5 | Ingresar contraseña incorrecta | Error de credenciales; no se crea sesión autenticada |
+| 6 | Ingresar como A | Panel con su nombre y correo |
+| 7 | Crear contacto de A | Aparece una vez en su panel, también tras recargar |
+| 8 | Editar ciudad o teléfono | Cambios visibles en panel |
+| 9 | Abrir eliminar y cancelar | El contacto permanece |
+| 10 | Registrar B e iniciar como B | No aparecen contactos de A |
+| 11 | Abrir URL de edición del contacto A desde B | 404 Contacto no disponible |
+| 12 | Abrir URL de eliminación del contacto A desde B | 404 Contacto no disponible |
+| 13 | Enviar POST con ID ajeno desde B | No modifica ni elimina el contacto A |
+| 14 | Alterar token oculto csrf en el inspector y enviar | Rechazo sin cambiar datos |
+| 15 | Enviar nombre con texto `<script>alert(1)</script>` | Se muestra como texto; no ejecuta JavaScript |
+| 16 | Confirmar eliminación como propietario A | Desaparece y muestra confirmación |
+| 17 | Cerrar sesión y solicitar nuevamente panel | Redirige a login |
+| 18 | URL con id inexistente, negativo o texto | Mensaje controlado, sin datos internos |
+| 19 | Pantalla estrecha / teclado Tab | Campos legibles, foco visible, tabla desplazable |
+| 20 | Abrir raíz del proyecto | Dirige a login o panel según sesión |
+
+Para el caso 13 se puede cambiar el atributo action de un formulario propio mediante las herramientas del navegador, usando el ID del contacto ajeno y un token válido de B. Comprobar después con A que no hubo cambios. Para validar en servidor, retirar temporalmente required o type=email con el inspector y enviar datos inválidos; no basta con el rechazo del navegador.
