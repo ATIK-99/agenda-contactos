@@ -10,3 +10,15 @@ a{color:#17549a;text-underline-offset:3px}button,.boton{display:inline-block;bor
 [role=alert]{padding:14px 20px;background:#fff0ee;color:#92271e;border:1px solid #e4aaa5;border-radius:5px}ul[role=alert]{padding-left:35px}[role=status]{padding:14px;background:#edf8f1;color:#215e3c;border:1px solid #a0cfb4;border-radius:5px}
 .tabla-contenedor{overflow-x:auto;margin-top:18px}table{border-collapse:collapse;width:100%}caption{text-align:left;padding:10px 0;font-weight:bold}th,td{padding:12px;text-align:left;border-bottom:1px solid #dce4ed;vertical-align:top}th{background:#edf3f9;color:#214f7d}td{overflow-wrap:anywhere}td:last-child{min-width:150px}td a{display:inline-block;margin:0 8px 5px 0}tbody tr:hover{background:#f6f9fc}footer{text-align:center;color:#536579;font-size:.85rem;padding:20px}:where(a,button,input):focus-visible{outline:3px solid #ba6500;outline-offset:3px}
 @media(max-width:600px){body{margin:14px auto}.cabecera{align-items:flex-start;flex-direction:column;gap:3px;padding:16px}main{padding:20px}h1{font-size:1.6rem}.tabla-contenedor table{min-width:650px}button{max-width:100%}}
+
+/* Búsqueda y ordenamiento: formulario GET sin JavaScript. */
+.filtros{max-width:none;padding:20px;background:#f5f8fc;border:1px solid #d8e1eb;border-radius:8px;margin-top:22px}
+.filtros-campos{display:grid;grid-template-columns:2fr 1.25fr 1fr 1fr;gap:14px;align-items:end}
+.filtros-campos>div{min-width:0}
+select{display:block;width:100%;padding:10px 12px;border:1px solid #8799ab;border-radius:5px;font:inherit;color:inherit;background:white}
+.ayuda{font-size:.88rem;color:#536579;margin:10px 0 16px}
+.filtros-acciones{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.resumen-resultados{font-size:.92rem;color:#536579;margin:18px 0 0}
+select:focus-visible{outline:3px solid #ba6500;outline-offset:3px}
+@media(max-width:850px){.filtros-campos{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.filtros{padding:16px}.filtros-campos{grid-template-columns:1fr}.filtros-acciones>*{width:100%;text-align:center}}

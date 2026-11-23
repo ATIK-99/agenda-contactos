@@ -1,48 +1,59 @@
-# Entrega del proyecto
+# Actualización y entrega · Versión 2
 
-## Actualizar la copia existente sin perder datos
+## Sustituir los archivos locales
 
-1. Guardar una copia de la carpeta actual fuera de `htdocs`.
-2. Extraer el ZIP y copiar la carpeta `agenda-contactos` a `C:\xampp\htdocs`, reemplazando los archivos anteriores.
-3. Verificar que no quedó una carpeta duplicada: la ruta debe terminar en `agenda-contactos/index.php`, no `agenda-contactos/agenda-contactos/index.php`.
-4. Conservar los nombres originales sin sufijos `(1)`.
-5. No borrar la base de datos. Si conserva las tablas de la actividad, no ejecutar cambios SQL.
-6. Si había una contraseña propia para MySQL, establecerla en `config/local.php` usando la plantilla.
-7. Cerrar la sesión anterior, volver a ingresar y actualizar el navegador con Ctrl+F5.
-8. Ejecutar las pruebas de `PRUEBAS.md`.
+1. Guardar una copia de la carpeta actual y exportar la base como respaldo.
+2. Extraer el ZIP y copiar el contenido de agenda-contactos sobre C:\xampp\htdocs\agenda-contactos.
+3. Reemplazar archivos coincidentes. **Conservar .git y config/local.php**; no vienen en el paquete.
+4. Verificar que la ruta sea agenda-contactos/index.php, sin otra carpeta agenda-contactos anidada.
+5. No hay migración SQL para A y B: la base existente permanece igual.
+6. Iniciar Apache y MySQL, ingresar a la agenda y recargar con Ctrl + F5.
+7. Probar búsqueda por los tres campos, orden por nombre y ciudad en ambas direcciones, combinación y limpieza.
 
-## SQL
+## Publicar la aplicación
 
-`sql/agenda.sql` instala desde cero y no incluye DROP ni datos personales. En una base existente con la estructura original no se requieren migraciones. Si la estructura es distinta, revisar primero en phpMyAdmin; IF NOT EXISTS no actualiza columnas existentes.
+Seguir [DESPLIEGUE.md](DESPLIEGUE.md). Antes de entregar, colocar la URL HTTPS real en el apartado **Enlaces y estado de publicación** del README y probarla desde una ventana privada.
 
-## Repositorio público
+## Actualizar el repositorio existente
 
-El paquete está listo para subir, pero el repositorio externo no viene creado.
+Repositorio: https://github.com/ATIK-99/agenda-contactos.git
 
-Opción con Git desde la terminal de Visual Studio Code, abierta en la carpeta del proyecto:
+El código anterior está en **master**. No es necesario crear otro repositorio ni repetir git init o git remote add origin.
 
-```bash
-git init
+En CMD, dentro de C:\xampp\htdocs\agenda-contactos:
+
+~~~bat
+git status
+git branch --show-current
+~~~
+
+La rama debe ser master, como en la entrega anterior. Si aparece otra, revisarlo antes de subir. Si es master:
+
+~~~bat
 git add .
-git commit -m "Completar agenda personal en PHP y MySQL"
-git branch -M main
-```
+git diff --cached --stat
+git commit -m "Agregar busqueda, ordenamiento y preparacion para hosting"
+git push origin master
+~~~
 
-Crear en GitHub un repositorio público llamado `agenda-contactos`, vacío (sin README ni .gitignore adicionales). Copiar su URL y ejecutar, sustituyendo TU_USUARIO:
+El listado debe incluir código, SQL, README, guías y capturas. **config/local.php no debe aparecer**. Subir los archivos directamente, no solo un ZIP.
 
-```bash
-git remote add origin https://github.com/TU_USUARIO/agenda-contactos.git
-git push -u origin main
-```
+Si la URL pública todavía no estaba disponible al subir el código, completarla en README.md y realizar otro commit:
 
-Si Git solicita identidad, configurar nombre y correo propios antes del commit. Si ya existe un remoto origin, comprobarlo con `git remote -v` antes de agregar otro. Autenticarse con el mecanismo de GitHub; no guardar tokens ni contraseñas en el proyecto.
+~~~bat
+git add README.md
+git commit -m "Documentar URL publica verificada"
+git push origin master
+~~~
 
-También es posible cargar los archivos desde la web del repositorio, conservando las subcarpetas. No cargar únicamente el ZIP: el README y código deben poder examinarse directamente. No subir `config/local.php`, registros ni exportaciones con usuarios reales. `.gitignore` actúa con Git, no al seleccionar archivos manualmente.
+Abrir https://github.com/ATIK-99/agenda-contactos/tree/master y comprobar que el README muestra las capturas y la URL correcta.
 
-## Elementos que se entregan
+## Entrega final
 
-- Carpeta completa del proyecto (se puede comprimir en ZIP).
-- `sql/agenda.sql`.
-- Enlace del repositorio público con README visible.
+| Entregable | Comprobación |
+| --- | --- |
+| URL del sistema | Funciona desde Internet: registro, acceso, CRUD, búsqueda y ordenamiento |
+| GitHub | master contiene los cambios y el README muestra URL y capturas |
+| SQL actualizado | sql/agenda.sql crea ambas tablas en la base seleccionada |
 
-Comprobar el enlace en una ventana privada para verificar su acceso público. Las capturas son opcionales salvo que el docente las solicite.
+Las capturas incluidas son locales y usan datos ficticios. Si se añaden capturas del hosting, utilizar datos de demostración e indicar su entorno real.

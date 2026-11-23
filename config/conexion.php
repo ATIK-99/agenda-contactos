@@ -22,5 +22,5 @@ try {
 } catch (PDOException $e) {
     error_log('Agenda: fallo de conexión con la base de datos.');
     http_response_code(500);
-    exit('No se pudo conectar con la base de datos. Revisa la configuración local.');
+    exit('No se pudo conectar con la base de datos. Revisa los datos de config/local.php.');
 }
