@@ -1,10 +1,5 @@
 -- Agenda personal de contactos, versión 2: búsqueda y ordenamiento.
 -- Compatible con MySQL y MariaDB, para XAMPP y hosting compartido.
--- PRIMERO crear y seleccionar la base en phpMyAdmin/panel del hosting.
--- Local: agenda_personal. Hosting: usar el nombre completo con su prefijo.
--- Se omiten CREATE DATABASE y USE para admitir los nombres y permisos del hosting.
--- Solo estructura: no incluye cuentas, contraseñas ni contactos de ejemplo.
--- No borra datos ni modifica tablas existentes (CREATE TABLE IF NOT EXISTS).
 -- Las mejoras A y B usan nombre, correo y ciudad: no requieren migración
 -- ni una columna de fecha de creación en contactos.
 SET NAMES utf8mb4;
