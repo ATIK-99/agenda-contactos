@@ -4,7 +4,7 @@ Aplicación académica en PHP y MySQL para registrar usuarios y administrar una 
 
 ## Enlaces y estado de publicación
 
-- **URL pública del sistema:** pendiente de publicación. Sustituir esta línea por la URL HTTPS real después de desplegar y comprobar la aplicación.
+-- **URL pública del sistema:** https://agenda-contactos-atik99.infinityfreeapp.com/
 - **Repositorio:** https://github.com/ATIK-99/agenda-contactos/tree/master
 - **Script SQL:** [sql/agenda.sql](sql/agenda.sql).
 - **Hosting previsto:** InfinityFree. El enlace del repositorio permite consultar el código, pero no ejecuta PHP ni MySQL.
