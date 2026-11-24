@@ -33,12 +33,17 @@ Pruebas ejecutadas con PHP 8.4.27 (servidor de desarrollo), PDO MySQL, mbstring,
 14. Diseño móvil sin desbordamiento de página y navegación por teclado.
 15. Cierre de sesión e inaccesibilidad posterior del panel.
 
-## Pendiente de completar con el despliegue
+## Estado del despliegue
 
-- Crear/configurar la cuenta de hosting y publicar el sistema.
-- Comprobar la URL pública y el certificado HTTPS.
-- Comprobar en el servidor de hosting las reglas Apache de los archivos .htaccess; el servidor integrado de PHP no las interpreta.
-- Repetir los flujos principales en la URL pública y registrar aquí sus resultados reales.
-- Completar la URL pública del README y subir los archivos actualizados a master en GitHub.
+- Cuenta de hosting creada en InfinityFree.
+- Archivos de la aplicación cargados en el hosting.
+- Configuración de conexión MySQL corregida mediante config/local.php.
+- Error de conexión resuelto durante la configuración.
+- Código de la versión 2 actualizado en la rama master de GitHub.
+- URL pública incorporada al README.
 
-La revisión local no acredita que el sistema ya esté publicado ni que los cambios se hayan subido a GitHub.
+URL del sistema: https://agenda-contactos-atik99.infinityfreeapp.com/
+
+## Verificación en el hosting
+
+Las pruebas anteriores corresponden al entorno local. La conexión con la base de datos del hosting fue corregida. Queda por registrar la comprobación completa de registro, inicio de sesión, creación, edición, eliminación, búsqueda, ordenamiento y cierre de sesión en la aplicación publicada.
