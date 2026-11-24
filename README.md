@@ -1,13 +1,13 @@
 # Agenda personal de contactos · Versión 2
 
-Aplicación académica en PHP y MySQL para registrar usuarios y administrar una agenda privada. Esta versión incorpora **A: búsqueda** y **B: ordenamiento**, y prepara el sistema para un hosting con PHP y MySQL.
+Aplicación académica en PHP y MySQL para registrar usuarios y administrar una agenda privada. Esta versión incorpora **A: búsqueda** y **B: ordenamiento**, y está alojada en InfinityFreeg con PHP y MySQL.
 
 ## Enlaces y estado de publicación
 
--- **URL pública del sistema:** https://agenda-contactos-atik99.infinityfreeapp.com/
+- **URL pública del sistema:** https://agenda-contactos-atik99.infinityfreeapp.com/
 - **Repositorio:** https://github.com/ATIK-99/agenda-contactos/tree/master
 - **Script SQL:** [sql/agenda.sql](sql/agenda.sql).
-- **Hosting previsto:** InfinityFree. El enlace del repositorio permite consultar el código, pero no ejecuta PHP ni MySQL.
+- **Hosting utilizado:** InfinityFree. El enlace del repositorio permite consultar el código, pero no ejecuta PHP ni MySQL.
 
 ## Mejoras respecto a la versión anterior
 
@@ -89,7 +89,7 @@ Guía completa: [docs/DESPLIEGUE.md](docs/DESPLIEGUE.md).
 3. Copiar config/hosting.ejemplo.php como config/local.php **en el hosting** y completar hostname MySQL, nombre completo de base, usuario y contraseña.
 4. Subir los archivos de ejecución a **htdocs**, conservando assets, config e includes. index.php debe quedar directamente dentro de htdocs.
 5. Configurar HTTPS y probar registro, acceso, CRUD, búsqueda y ordenamiento desde Internet.
-6. Reemplazar el estado pendiente al inicio del README por la URL HTTPS comprobada y actualizar el repositorio.
+6. Mantener actualizada la URL pública del sistema en este README.
 
 config/local.php está excluido por .gitignore. Su contenido cambia entre XAMPP y hosting. El hostname MySQL de InfinityFree se obtiene del panel; no se usa el 127.0.0.1 de XAMPP.
 
@@ -122,7 +122,7 @@ La clave foránea contactos.id_usuario vincula cada contacto con su propietario.
 
 ## Entregables
 
-- URL pública del sistema funcionando, pendiente hasta completar el despliegue.
+- URL pública del sistema: https://agenda-contactos-atik99.infinityfreeapp.com/
 - Repositorio GitHub actualizado en master, incluyendo README y capturas.
 - Script sql/agenda.sql.
 
