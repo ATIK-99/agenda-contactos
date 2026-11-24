@@ -46,4 +46,14 @@ URL del sistema: https://agenda-contactos-atik99.infinityfreeapp.com/
 
 ## Verificación en el hosting
 
-Las pruebas anteriores corresponden al entorno local. La conexión con la base de datos del hosting fue corregida. Queda por registrar la comprobación completa de registro, inicio de sesión, creación, edición, eliminación, búsqueda, ordenamiento y cierre de sesión en la aplicación publicada.
+Se realizaron pruebas manuales en la aplicación publicada en InfinityFree, con resultados satisfactorios:
+
+- Registro de usuarios e inicio de sesión.
+- Creación de contactos.
+- Búsqueda por nombre, correo y ciudad.
+- Ordenamiento por nombre y ciudad, en ambas direcciones.
+- Edición y conservación de los cambios.
+- Eliminación de contactos con confirmación.
+- Cierre de sesión y protección del acceso al panel.
+
+URL del sistema: https://agenda-contactos-atik99.infinityfreeapp.com/
